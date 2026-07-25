@@ -16,3 +16,4 @@ output/ai/
 .vscode/
 .idea/
 .DS_Store
+AGENTS.md
