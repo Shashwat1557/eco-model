@@ -1,0 +1,271 @@
+Program Version,EnergyPlus, Version 26.1.0-6f2e40d102, YMD=2026.07.26 01:08
+1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
+2,8,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
+3,5,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Report Variables Requested
+4,2,Cumulative Days of Simulation[],Month[]  ! When Monthly Report Variables Requested
+5,1,Cumulative Days of Simulation[] ! When Run Period Report Variables Requested
+6,1,Calendar Year of Simulation[] ! When Annual Report Variables Requested
+7,1,Environment,Site Outdoor Air Drybulb Temperature [C] !Hourly,REPORTSCH
+388,1,ZSF1,Zone Air Temperature [C] !Hourly,REPORTSCH
+389,1,ZSF1,Zone Air Humidity Ratio [] !Hourly,REPORTSCH
+524,1,ZSF1,Zone Air System Sensible Heating Rate [W] !Hourly,REPORTSCH
+525,1,ZSF1,Zone Air System Sensible Cooling Rate [W] !Hourly,REPORTSCH
+526,1,ZNF1,Zone Air Temperature [C] !Hourly,REPORTSCH
+527,1,ZNF1,Zone Air Humidity Ratio [] !Hourly,REPORTSCH
+590,1,ZNF1,Zone Air System Sensible Heating Rate [W] !Hourly,REPORTSCH
+591,1,ZNF1,Zone Air System Sensible Cooling Rate [W] !Hourly,REPORTSCH
+592,1,ZSF2,Zone Air Temperature [C] !Hourly,REPORTSCH
+593,1,ZSF2,Zone Air Humidity Ratio [] !Hourly,REPORTSCH
+656,1,ZSF2,Zone Air System Sensible Heating Rate [W] !Hourly,REPORTSCH
+657,1,ZSF2,Zone Air System Sensible Cooling Rate [W] !Hourly,REPORTSCH
+658,1,ZNF2,Zone Air Temperature [C] !Hourly,REPORTSCH
+659,1,ZNF2,Zone Air Humidity Ratio [] !Hourly,REPORTSCH
+722,1,ZNF2,Zone Air System Sensible Heating Rate [W] !Hourly,REPORTSCH
+723,1,ZNF2,Zone Air System Sensible Cooling Rate [W] !Hourly,REPORTSCH
+724,1,BASE-1,Zone Air Temperature [C] !Hourly,REPORTSCH
+725,1,BASE-1,Zone Air Humidity Ratio [] !Hourly,REPORTSCH
+788,1,BASE-1,Zone Air System Sensible Heating Rate [W] !Hourly,REPORTSCH
+789,1,BASE-1,Zone Air System Sensible Cooling Rate [W] !Hourly,REPORTSCH
+830,1,DX COOLING COIL SYSTEM 1,Coil System Part Load Ratio [] !Hourly,REPORTSCH
+831,1,DX COOLING COIL SYSTEM 2,Coil System Part Load Ratio [] !Hourly,REPORTSCH
+832,1,DX COOLING COIL SYSTEM 3,Coil System Part Load Ratio [] !Hourly,REPORTSCH
+833,1,DX COOLING COIL SYSTEM 4,Coil System Part Load Ratio [] !Hourly,REPORTSCH
+834,1,ACDXCOIL 1,Cooling Coil Total Cooling Rate [W] !Hourly,REPORTSCH
+860,1,ACDXCOIL 1,Cooling Coil Sensible Cooling Rate [W] !Hourly,REPORTSCH
+886,1,ACDXCOIL 2,Cooling Coil Total Cooling Rate [W] !Hourly,REPORTSCH
+888,1,ACDXCOIL 2,Cooling Coil Sensible Cooling Rate [W] !Hourly,REPORTSCH
+890,1,ACDXCOIL 3,Cooling Coil Total Cooling Rate [W] !Hourly,REPORTSCH
+892,1,ACDXCOIL 3,Cooling Coil Sensible Cooling Rate [W] !Hourly,REPORTSCH
+894,1,ACDXCOIL 4,Cooling Coil Total Cooling Rate [W] !Hourly,REPORTSCH
+896,1,ACDXCOIL 4,Cooling Coil Sensible Cooling Rate [W] !Hourly,REPORTSCH
+911,1,MAIN HEATING COIL 1,Heating Coil Heating Rate [W] !Hourly,REPORTSCH
+988,1,MAIN HEATING COIL 2,Heating Coil Heating Rate [W] !Hourly,REPORTSCH
+993,1,MAIN HEATING COIL 3,Heating Coil Heating Rate [W] !Hourly,REPORTSCH
+998,1,MAIN HEATING COIL 4,Heating Coil Heating Rate [W] !Hourly,REPORTSCH
+865,9,Cooling:Electricity [J] !Monthly [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+940,9,Heating:NaturalGas [J] !Monthly [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+806,9,Fans:Electricity [J] !Monthly [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+902,9,HeatingCoils:EnergyTransfer [J] !Monthly [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+851,9,CoolingCoils:EnergyTransfer [J] !Monthly [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+60,9,InteriorLights:Electricity [J] !Monthly [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+244,9,InteriorEquipment:Electricity [J] !Monthly [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+867,11,Cooling:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+942,11,Heating:NaturalGas [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+808,11,Fans:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+904,11,HeatingCoils:EnergyTransfer [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+853,11,CoolingCoils:EnergyTransfer [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+62,11,InteriorLights:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+246,11,InteriorEquipment:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+End of Data Dictionary
+1,RUN PERIOD 1,  28.57,  77.10,   5.50, 236.80
+2,1,10, 1, 0, 1, 0.00,60.00,Tuesday
+2,1,10, 1, 0, 2, 0.00,60.00,Tuesday
+2,1,10, 1, 0, 3, 0.00,60.00,Tuesday
+2,1,10, 1, 0, 4, 0.00,60.00,Tuesday
+2,1,10, 1, 0, 5, 0.00,60.00,Tuesday
+2,1,10, 1, 0, 6, 0.00,60.00,Tuesday
+2,1,10, 1, 0, 7, 0.00,60.00,Tuesday
+2,1,10, 1, 0, 8, 0.00,60.00,Tuesday
+2,1,10, 1, 0, 9, 0.00,60.00,Tuesday
+2,1,10, 1, 0,10, 0.00,60.00,Tuesday
+2,1,10, 1, 0,11, 0.00,60.00,Tuesday
+2,1,10, 1, 0,12, 0.00,60.00,Tuesday
+2,1,10, 1, 0,13, 0.00,60.00,Tuesday
+2,1,10, 1, 0,14, 0.00,60.00,Tuesday
+2,1,10, 1, 0,15, 0.00,60.00,Tuesday
+2,1,10, 1, 0,16, 0.00,60.00,Tuesday
+2,1,10, 1, 0,17, 0.00,60.00,Tuesday
+2,1,10, 1, 0,18, 0.00,60.00,Tuesday
+2,1,10, 1, 0,19, 0.00,60.00,Tuesday
+2,1,10, 1, 0,20, 0.00,60.00,Tuesday
+2,1,10, 1, 0,21, 0.00,60.00,Tuesday
+2,1,10, 1, 0,22, 0.00,60.00,Tuesday
+2,1,10, 1, 0,23, 0.00,60.00,Tuesday
+2,1,10, 1, 0,24, 0.00,60.00,Tuesday
+2,2,10, 2, 0, 1, 0.00,60.00,Wednesday
+2,2,10, 2, 0, 2, 0.00,60.00,Wednesday
+2,2,10, 2, 0, 3, 0.00,60.00,Wednesday
+2,2,10, 2, 0, 4, 0.00,60.00,Wednesday
+2,2,10, 2, 0, 5, 0.00,60.00,Wednesday
+2,2,10, 2, 0, 6, 0.00,60.00,Wednesday
+2,2,10, 2, 0, 7, 0.00,60.00,Wednesday
+2,2,10, 2, 0, 8, 0.00,60.00,Wednesday
+2,2,10, 2, 0, 9, 0.00,60.00,Wednesday
+2,2,10, 2, 0,10, 0.00,60.00,Wednesday
+2,2,10, 2, 0,11, 0.00,60.00,Wednesday
+2,2,10, 2, 0,12, 0.00,60.00,Wednesday
+2,2,10, 2, 0,13, 0.00,60.00,Wednesday
+2,2,10, 2, 0,14, 0.00,60.00,Wednesday
+2,2,10, 2, 0,15, 0.00,60.00,Wednesday
+2,2,10, 2, 0,16, 0.00,60.00,Wednesday
+2,2,10, 2, 0,17, 0.00,60.00,Wednesday
+2,2,10, 2, 0,18, 0.00,60.00,Wednesday
+2,2,10, 2, 0,19, 0.00,60.00,Wednesday
+2,2,10, 2, 0,20, 0.00,60.00,Wednesday
+2,2,10, 2, 0,21, 0.00,60.00,Wednesday
+2,2,10, 2, 0,22, 0.00,60.00,Wednesday
+2,2,10, 2, 0,23, 0.00,60.00,Wednesday
+2,2,10, 2, 0,24, 0.00,60.00,Wednesday
+2,3,10, 3, 0, 1, 0.00,60.00,Thursday
+2,3,10, 3, 0, 2, 0.00,60.00,Thursday
+2,3,10, 3, 0, 3, 0.00,60.00,Thursday
+2,3,10, 3, 0, 4, 0.00,60.00,Thursday
+2,3,10, 3, 0, 5, 0.00,60.00,Thursday
+2,3,10, 3, 0, 6, 0.00,60.00,Thursday
+2,3,10, 3, 0, 7, 0.00,60.00,Thursday
+2,3,10, 3, 0, 8, 0.00,60.00,Thursday
+2,3,10, 3, 0, 9, 0.00,60.00,Thursday
+2,3,10, 3, 0,10, 0.00,60.00,Thursday
+2,3,10, 3, 0,11, 0.00,60.00,Thursday
+2,3,10, 3, 0,12, 0.00,60.00,Thursday
+2,3,10, 3, 0,13, 0.00,60.00,Thursday
+2,3,10, 3, 0,14, 0.00,60.00,Thursday
+2,3,10, 3, 0,15, 0.00,60.00,Thursday
+2,3,10, 3, 0,16, 0.00,60.00,Thursday
+2,3,10, 3, 0,17, 0.00,60.00,Thursday
+2,3,10, 3, 0,18, 0.00,60.00,Thursday
+2,3,10, 3, 0,19, 0.00,60.00,Thursday
+2,3,10, 3, 0,20, 0.00,60.00,Thursday
+2,3,10, 3, 0,21, 0.00,60.00,Thursday
+2,3,10, 3, 0,22, 0.00,60.00,Thursday
+2,3,10, 3, 0,23, 0.00,60.00,Thursday
+2,3,10, 3, 0,24, 0.00,60.00,Thursday
+2,4,10, 4, 0, 1, 0.00,60.00,Friday
+2,4,10, 4, 0, 2, 0.00,60.00,Friday
+2,4,10, 4, 0, 3, 0.00,60.00,Friday
+2,4,10, 4, 0, 4, 0.00,60.00,Friday
+2,4,10, 4, 0, 5, 0.00,60.00,Friday
+2,4,10, 4, 0, 6, 0.00,60.00,Friday
+2,4,10, 4, 0, 7, 0.00,60.00,Friday
+2,4,10, 4, 0, 8, 0.00,60.00,Friday
+2,4,10, 4, 0, 9, 0.00,60.00,Friday
+2,4,10, 4, 0,10, 0.00,60.00,Friday
+2,4,10, 4, 0,11, 0.00,60.00,Friday
+2,4,10, 4, 0,12, 0.00,60.00,Friday
+2,4,10, 4, 0,13, 0.00,60.00,Friday
+2,4,10, 4, 0,14, 0.00,60.00,Friday
+2,4,10, 4, 0,15, 0.00,60.00,Friday
+2,4,10, 4, 0,16, 0.00,60.00,Friday
+2,4,10, 4, 0,17, 0.00,60.00,Friday
+2,4,10, 4, 0,18, 0.00,60.00,Friday
+2,4,10, 4, 0,19, 0.00,60.00,Friday
+2,4,10, 4, 0,20, 0.00,60.00,Friday
+2,4,10, 4, 0,21, 0.00,60.00,Friday
+2,4,10, 4, 0,22, 0.00,60.00,Friday
+2,4,10, 4, 0,23, 0.00,60.00,Friday
+2,4,10, 4, 0,24, 0.00,60.00,Friday
+2,5,10, 5, 0, 1, 0.00,60.00,Saturday
+2,5,10, 5, 0, 2, 0.00,60.00,Saturday
+2,5,10, 5, 0, 3, 0.00,60.00,Saturday
+2,5,10, 5, 0, 4, 0.00,60.00,Saturday
+2,5,10, 5, 0, 5, 0.00,60.00,Saturday
+2,5,10, 5, 0, 6, 0.00,60.00,Saturday
+2,5,10, 5, 0, 7, 0.00,60.00,Saturday
+2,5,10, 5, 0, 8, 0.00,60.00,Saturday
+2,5,10, 5, 0, 9, 0.00,60.00,Saturday
+2,5,10, 5, 0,10, 0.00,60.00,Saturday
+2,5,10, 5, 0,11, 0.00,60.00,Saturday
+2,5,10, 5, 0,12, 0.00,60.00,Saturday
+2,5,10, 5, 0,13, 0.00,60.00,Saturday
+2,5,10, 5, 0,14, 0.00,60.00,Saturday
+2,5,10, 5, 0,15, 0.00,60.00,Saturday
+2,5,10, 5, 0,16, 0.00,60.00,Saturday
+2,5,10, 5, 0,17, 0.00,60.00,Saturday
+2,5,10, 5, 0,18, 0.00,60.00,Saturday
+2,5,10, 5, 0,19, 0.00,60.00,Saturday
+2,5,10, 5, 0,20, 0.00,60.00,Saturday
+2,5,10, 5, 0,21, 0.00,60.00,Saturday
+2,5,10, 5, 0,22, 0.00,60.00,Saturday
+2,5,10, 5, 0,23, 0.00,60.00,Saturday
+2,5,10, 5, 0,24, 0.00,60.00,Saturday
+2,6,10, 6, 0, 1, 0.00,60.00,Sunday
+2,6,10, 6, 0, 2, 0.00,60.00,Sunday
+2,6,10, 6, 0, 3, 0.00,60.00,Sunday
+2,6,10, 6, 0, 4, 0.00,60.00,Sunday
+2,6,10, 6, 0, 5, 0.00,60.00,Sunday
+2,6,10, 6, 0, 6, 0.00,60.00,Sunday
+2,6,10, 6, 0, 7, 0.00,60.00,Sunday
+2,6,10, 6, 0, 8, 0.00,60.00,Sunday
+2,6,10, 6, 0, 9, 0.00,60.00,Sunday
+2,6,10, 6, 0,10, 0.00,60.00,Sunday
+2,6,10, 6, 0,11, 0.00,60.00,Sunday
+2,6,10, 6, 0,12, 0.00,60.00,Sunday
+2,6,10, 6, 0,13, 0.00,60.00,Sunday
+2,6,10, 6, 0,14, 0.00,60.00,Sunday
+2,6,10, 6, 0,15, 0.00,60.00,Sunday
+2,6,10, 6, 0,16, 0.00,60.00,Sunday
+2,6,10, 6, 0,17, 0.00,60.00,Sunday
+2,6,10, 6, 0,18, 0.00,60.00,Sunday
+2,6,10, 6, 0,19, 0.00,60.00,Sunday
+2,6,10, 6, 0,20, 0.00,60.00,Sunday
+2,6,10, 6, 0,21, 0.00,60.00,Sunday
+2,6,10, 6, 0,22, 0.00,60.00,Sunday
+2,6,10, 6, 0,23, 0.00,60.00,Sunday
+2,6,10, 6, 0,24, 0.00,60.00,Sunday
+2,7,10, 7, 0, 1, 0.00,60.00,Monday
+2,7,10, 7, 0, 2, 0.00,60.00,Monday
+2,7,10, 7, 0, 3, 0.00,60.00,Monday
+2,7,10, 7, 0, 4, 0.00,60.00,Monday
+2,7,10, 7, 0, 5, 0.00,60.00,Monday
+2,7,10, 7, 0, 6, 0.00,60.00,Monday
+2,7,10, 7, 0, 7, 0.00,60.00,Monday
+2,7,10, 7, 0, 8, 0.00,60.00,Monday
+2,7,10, 7, 0, 9, 0.00,60.00,Monday
+2,7,10, 7, 0,10, 0.00,60.00,Monday
+2,7,10, 7, 0,11, 0.00,60.00,Monday
+2,7,10, 7, 0,12, 0.00,60.00,Monday
+2,7,10, 7, 0,13, 0.00,60.00,Monday
+2,7,10, 7, 0,14, 0.00,60.00,Monday
+2,7,10, 7, 0,15, 0.00,60.00,Monday
+2,7,10, 7, 0,16, 0.00,60.00,Monday
+2,7,10, 7, 0,17, 0.00,60.00,Monday
+2,7,10, 7, 0,18, 0.00,60.00,Monday
+2,7,10, 7, 0,19, 0.00,60.00,Monday
+2,7,10, 7, 0,20, 0.00,60.00,Monday
+2,7,10, 7, 0,21, 0.00,60.00,Monday
+2,7,10, 7, 0,22, 0.00,60.00,Monday
+2,7,10, 7, 0,23, 0.00,60.00,Monday
+2,7,10, 7, 0,24, 0.00,60.00,Monday
+2,8,10, 8, 0, 1, 0.00,60.00,Tuesday
+2,8,10, 8, 0, 2, 0.00,60.00,Tuesday
+2,8,10, 8, 0, 3, 0.00,60.00,Tuesday
+2,8,10, 8, 0, 4, 0.00,60.00,Tuesday
+2,8,10, 8, 0, 5, 0.00,60.00,Tuesday
+2,8,10, 8, 0, 6, 0.00,60.00,Tuesday
+2,8,10, 8, 0, 7, 0.00,60.00,Tuesday
+2,8,10, 8, 0, 8, 0.00,60.00,Tuesday
+2,8,10, 8, 0, 9, 0.00,60.00,Tuesday
+2,8,10, 8, 0,10, 0.00,60.00,Tuesday
+2,8,10, 8, 0,11, 0.00,60.00,Tuesday
+2,8,10, 8, 0,12, 0.00,60.00,Tuesday
+2,8,10, 8, 0,13, 0.00,60.00,Tuesday
+2,8,10, 8, 0,14, 0.00,60.00,Tuesday
+2,8,10, 8, 0,15, 0.00,60.00,Tuesday
+2,8,10, 8, 0,16, 0.00,60.00,Tuesday
+2,8,10, 8, 0,17, 0.00,60.00,Tuesday
+2,8,10, 8, 0,18, 0.00,60.00,Tuesday
+2,8,10, 8, 0,19, 0.00,60.00,Tuesday
+2,8,10, 8, 0,20, 0.00,60.00,Tuesday
+2,8,10, 8, 0,21, 0.00,60.00,Tuesday
+2,8,10, 8, 0,22, 0.00,60.00,Tuesday
+2,8,10, 8, 0,23, 0.00,60.00,Tuesday
+2,8,10, 8, 0,24, 0.00,60.00,Tuesday
+2,9,10, 9, 0, 1, 0.00,60.00,Wednesday
+2,9,10, 9, 0, 2, 0.00,60.00,Wednesday
+2,9,10, 9, 0, 3, 0.00,60.00,Wednesday
+2,9,10, 9, 0, 4, 0.00,60.00,Wednesday
+2,9,10, 9, 0, 5, 0.00,60.00,Wednesday
+2,9,10, 9, 0, 6, 0.00,60.00,Wednesday
+2,9,10, 9, 0, 7, 0.00,60.00,Wednesday
+2,9,10, 9, 0, 8, 0.00,60.00,Wednesday
+2,9,10, 9, 0, 9, 0.00,60.00,Wednesday
+2,9,10, 9, 0,10, 0.00,60.00,Wednesday
+2,9,10, 9, 0,11, 0.00,60.00,Wednesday
+2,9,10, 9, 0,12, 0.00,60.00,Wednesday
+2,9,10, 9, 0,13, 0.00,60.00,Wednesday
+2,9,10, 9, 0,14, 0.00,60.00,Wednesday
+2,9,10, 9, 0,15, 0.00,60.00,Wednesday
+2,9,10, 9, 0,16, 0.00,60.00,Wednesday
+2,9,10, 9, 0,17, 0.00,60.00,Wednesday
+2,9,10, 9, 0,18, 0.00,60.00,Wednesday
+2,9,10, 9, 0,19, 0.00,60.00,Wednesda

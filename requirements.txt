@@ -1,0 +1,25 @@
+# Eco-Loop Building Agent — Python Dependencies
+
+# EnergyPlus Python API (included with EnergyPlus installation, no pip install needed)
+# pyenergyplus — installed via: /Applications/EnergyPlus-26-1-0/pyenergyplus
+
+# Core web & API
+fastapi>=0.110.0
+uvicorn>=0.30.0
+requests>=2.31.0
+
+# Data & computation
+pandas>=2.0.0
+numpy>=1.26.0
+
+# Visualization
+matplotlib>=3.8.0
+
+# Dashboard
+streamlit>=1.35.0
+
+# MCP Protocol
+mcp>=1.0.0
+
+# Utilities
+python-dotenv>=1.0.0

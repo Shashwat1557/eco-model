@@ -1,0 +1,14 @@
+Program Version,EnergyPlus, Version 26.1.0-6f2e40d102, YMD=2026.07.26 01:08,
+   ** Warning ** Weather file location will be used rather than entered (IDF) Location object.
+   **   ~~~   ** ..Location object=CHICAGO_IL_USA TMY2-94846
+   **   ~~~   ** ..Weather File Location=New.Delhi-Gandhi.Intl.AP DL IND SRC-TMYx WMO#=421810
+   **   ~~~   ** ..due to location differences, Latitude difference=[13.21] degrees, Longitude difference=[164.85] degrees.
+   **   ~~~   ** ..Time Zone difference=[11.5] hour(s), Elevation difference=[24.63] percent, [46.80] meters.
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
