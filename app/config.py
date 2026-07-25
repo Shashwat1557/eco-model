@@ -72,13 +72,12 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-2.5-flash"
 
 NVIDIA_API_KEY = os.environ.get("NVIDIA_API_KEY", "")
-NVIDIA_MODEL = "deepseek-ai/deepseek-v4-flash"  # NVIDIA NIM DeepSeek Flash model
+NVIDIA_MODEL = "meta/llama-3.1-8b-instruct"  # Confirmed working on this API key tier
 NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1"
 
 # How many timestep readings to buffer before calling LLM
-# Gemini free-tier: ~60 req/min. Annual sim = 35040 timesteps.
-# At interval=240, we make ~146 Gemini calls total (one per simulated day) — well within limits.
-LLM_CALL_INTERVAL_TIMESTEPS = 4  # call LLM every N EnergyPlus timesteps
+# At interval=2000, we make ~18 calls total per annual simulation — fast and safe for rate limits.
+LLM_CALL_INTERVAL_TIMESTEPS = 2000
 
 # ──────────────────────────────────────────────
 # MCP SERVER

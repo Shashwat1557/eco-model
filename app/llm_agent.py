@@ -29,10 +29,11 @@ class EcoLoopLLMAgent:
     """
 
     def __init__(self, backend: str = None):
-        # How many timestep readings to buffer before calling LLM
-        # Gemini free-tier: ~60 req/min. Annual sim = 35040 timesteps.
-        # At interval=240, we make ~146 Gemini calls total (one per simulated day) — well within limits.
-        self.LLM_CALL_INTERVAL_TIMESTEPS = 240
+        # How many timestep readings to buffer before calling LLM.
+        # NVIDIA free tier: ~5 req/min hard limit. Annual sim = 35,040 timesteps.
+        # At interval=2000 we make ~18 calls total — well within limits.
+        # Gemini free tier: 60 req/min → interval=240 gives ~146 calls (safe too).
+        self.LLM_CALL_INTERVAL_TIMESTEPS = 2000
         self.backend = backend or config.LLM_BACKEND
         self.call_count = 0
         self.fallback_count = 0
@@ -228,8 +229,11 @@ class EcoLoopLLMAgent:
     def _call_nvidia(
         self, prompt, zone_temp, outdoor_temp, hour, is_occupied, hvac_power, h_sp, c_sp
     ) -> tuple[float, float]:
-        """Call NVIDIA NIM API (OpenAI-compatible protocol for Kimi 2.5 / Moonshot)."""
+        """Call NVIDIA NIM API with exponential backoff retry on 429 rate-limit errors."""
         import urllib.request
+        import urllib.error
+        import time as _time
+
         api_key = config.NVIDIA_API_KEY
         if not api_key:
             raise ValueError("NVIDIA_API_KEY environment variable is not set")
@@ -249,17 +253,32 @@ class EcoLoopLLMAgent:
             "max_tokens": 200,
         }
         url = f"{config.NVIDIA_BASE_URL}/chat/completions"
-        req = urllib.request.Request(
-            url,
-            data=json.dumps(payload).encode(),
-            headers=headers,
-        )
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read())
-        result_text = data["choices"][0]["message"]["content"]
-        parsed = self._parse_llm_response(result_text)
-        if parsed:
-            return parsed
+
+        max_retries = 4
+        for attempt in range(max_retries):
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(payload).encode(),
+                headers=headers,
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    data = json.loads(resp.read())
+                result_text = data["choices"][0]["message"]["content"]
+                parsed = self._parse_llm_response(result_text)
+                if parsed:
+                    return parsed
+                return compute_rule_based_setpoints(
+                    zone_temp, outdoor_temp, hour, is_occupied, hvac_power, h_sp, c_sp
+                )
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and attempt < max_retries - 1:
+                    wait = 15 * (2 ** attempt)  # 15s, 30s, 60s
+                    print(f"[LLMAgent] NVIDIA 429 rate limit — waiting {wait}s (attempt {attempt+1}/{max_retries})")
+                    _time.sleep(wait)
+                    continue
+                raise  # re-raise on non-429 or final attempt
+
         return compute_rule_based_setpoints(
             zone_temp, outdoor_temp, hour, is_occupied, hvac_power, h_sp, c_sp
         )
