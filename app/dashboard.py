@@ -14,7 +14,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import config
-from optimizer import get_full_report, generate_markdown_report, generate_comparison_csv
+from optimizer import get_full_report, generate_markdown_report, generate_comparison_csv, generate_pdf_report
 
 import streamlit as st
 import pandas as pd
