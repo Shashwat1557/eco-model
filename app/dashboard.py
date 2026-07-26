@@ -213,9 +213,10 @@ if not has_data:
     st.error("No simulation data found. Run: `./venv/bin/python app/energyplus_runner.py --mode both`")
     st.stop()
 
-# Generate report strings
+# Generate report strings & PDF buffer
 md_report = generate_markdown_report(report)
 csv_report = generate_comparison_csv(report)
+pdf_report = generate_pdf_report(report)
 
 b_df = pd.DataFrame(baseline_rows)
 a_df = pd.DataFrame(ai_rows)
@@ -252,7 +253,14 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### 📥 Download Reports")
     st.download_button(
-        label="📄 Download Report (.md)",
+        label="📄 Download PDF Report (.pdf)",
+        data=pdf_report,
+        file_name=f"EcoLoop_Executive_Report_{config.LLM_BACKEND}.pdf",
+        mime="application/pdf",
+        key="btn_sidebar_pdf",
+    )
+    st.download_button(
+        label="📝 Download Report (.md)",
         data=md_report,
         file_name=f"EcoLoop_Report_{config.LLM_BACKEND}.md",
         mime="text/markdown",
@@ -686,7 +694,15 @@ with rep_col1:
 with rep_col2:
     st.markdown("<div style='height:5px;'></div>", unsafe_allow_html=True)
     st.download_button(
-        label="📥 Download Full Report (.md)",
+        label="📄 Download PDF Report (.pdf)",
+        data=pdf_report,
+        file_name=f"EcoLoop_Executive_Report_{config.LLM_BACKEND}.pdf",
+        mime="application/pdf",
+        key="btn_main_pdf",
+        use_container_width=True,
+    )
+    st.download_button(
+        label="📝 Download Markdown Report (.md)",
         data=md_report,
         file_name=f"EcoLoop_Executive_Report_{config.LLM_BACKEND}.md",
         mime="text/markdown",
