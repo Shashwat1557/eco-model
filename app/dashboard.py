@@ -14,7 +14,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import config
-from optimizer import get_full_report
+from optimizer import get_full_report, generate_markdown_report, generate_comparison_csv
 
 import streamlit as st
 import pandas as pd
@@ -213,6 +213,10 @@ if not has_data:
     st.error("No simulation data found. Run: `./venv/bin/python app/energyplus_runner.py --mode both`")
     st.stop()
 
+# Generate report strings
+md_report = generate_markdown_report(report)
+csv_report = generate_comparison_csv(report)
+
 b_df = pd.DataFrame(baseline_rows)
 a_df = pd.DataFrame(ai_rows)
 
@@ -244,6 +248,23 @@ with st.sidebar:
     st.metric("Energy Saved", f"{abs(energy_saved):.1f}%", delta="vs Baseline", delta_color="normal")
     st.metric("Carbon Reduced", f"{abs(carbon_saved):.1f}%", delta="kg CO₂", delta_color="normal")
     st.metric("Cost Saved", f"Rs.{abs(cost_saved):,.0f}", delta="INR/year", delta_color="normal")
+
+    st.markdown("---")
+    st.markdown("### 📥 Download Reports")
+    st.download_button(
+        label="📄 Download Report (.md)",
+        data=md_report,
+        file_name=f"EcoLoop_Report_{config.LLM_BACKEND}.md",
+        mime="text/markdown",
+        key="btn_sidebar_md",
+    )
+    st.download_button(
+        label="📊 Download Metrics (.csv)",
+        data=csv_report,
+        file_name=f"EcoLoop_Comparison_{config.LLM_BACKEND}.csv",
+        mime="text/csv",
+        key="btn_sidebar_csv",
+    )
 
     st.markdown("---")
     st.markdown("""
@@ -643,6 +664,46 @@ if "sim_day" in a_df.columns and "hour" in a_df.columns and "hvac_power_w" in a_
         fig_ha = make_heatmap(a_df, "AI Closed-Loop — Monthly Energy Pattern",
             [[0, "rgba(10,18,35,1)"], [0.4, "rgba(5,150,105,0.7)"], [1, "rgba(110,231,183,1)"]], zmax=zmax_shared)
         st.plotly_chart(fig_ha, use_container_width=True, config={"displayModeBar": False})
+
+# ──────────────────────────────────────────────
+# EXECUTIVE REPORT & COMPARISON DOWNLOAD
+# ──────────────────────────────────────────────
+section("📑", "Executive Report & Baseline vs LLM Comparison")
+
+rep_col1, rep_col2 = st.columns([2, 1])
+
+with rep_col1:
+    st.markdown(f"""
+    <div style="background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:1.4rem;margin-bottom:1rem;">
+        <h4 style="color:#34d399;margin-top:0;font-family:'Space Grotesk',sans-serif;">🌿 Baseline vs LLM-Powered Performance Summary</h4>
+        <p style="color:#cbd5e1;font-size:0.88rem;line-height:1.6;">
+            The LLM-powered closed-loop controller (Active Backend: <b style="color:#60a5fa;">{config.LLM_BACKEND.upper()}</b>) actively adapts setpoint boundaries per timestep.
+            Download the comprehensive Markdown report or raw CSV comparison dataset below for technical audit.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with rep_col2:
+    st.markdown("<div style='height:5px;'></div>", unsafe_allow_html=True)
+    st.download_button(
+        label="📥 Download Full Report (.md)",
+        data=md_report,
+        file_name=f"EcoLoop_Executive_Report_{config.LLM_BACKEND}.md",
+        mime="text/markdown",
+        key="btn_main_md",
+        use_container_width=True,
+    )
+    st.download_button(
+        label="📊 Download Comparison CSV (.csv)",
+        data=csv_report,
+        file_name=f"EcoLoop_Comparison_{config.LLM_BACKEND}.csv",
+        mime="text/csv",
+        key="btn_main_csv",
+        use_container_width=True,
+    )
+
+with st.expander("📖 Live Report Preview (Markdown)", expanded=False):
+    st.markdown(md_report)
 
 # ──────────────────────────────────────────────
 # RAW DATA
